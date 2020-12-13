@@ -3,5 +3,11 @@
 Acerca
 {% endblock %}
 {% block body %}
-    <p>Bienvenido {{usuario}}</p>
+
+<h1>Usuarios registrados</h1>
+{% for result in variable %}
+
+<p>{{result.nombre}}, {{result.apellido}}</p>
+
+{% endfor %}
 {% endblock %}

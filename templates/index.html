@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block title %}
+Index
+{% endblock %}
+{% block body %}
+<div class="jumbotron">
+
+
+<h1>Servicios en la nube</h1>
+<p>
+    <img src="{{url_for('static',filename='itcolima.svg')}}" height="200px" height="200px" alt="">
+</p>
+<ul>
+    {%for element in variable%}
+    <li>{{element}}</li>
+    {% endfor %}
+</ul>
+{%if "Acerca" in variable%}
+<p>El elemnto Acerca existe en la lista</p>
+{%else%}
+<p>El elemento no existe en la lista</p>
+{%endif%}
+<form action="/" method="POST">
+    <input type="text" name="nombre" id="">
+    <input type="text" name="apellido" id="">
+    <!--<input type="submit" class="btn btn-primary" value="Ir a Acerca">-->
+    <input type="submit" value="Registrar">
+    
+</form>
+<p>{{mensaje}}</p>
+</div>
+
+{% endblock %}

@@ -5,9 +5,27 @@ Acerca
 {% block body %}
 
 <h1>Usuarios registrados</h1>
-{% for result in variable %}
 
-<p>{{result.nombre}}, {{result.apellido}}</p>
-
-{% endfor %}
+<div>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in variable %}
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.nombre}}</td>
+                <td>{{result.apellido}}</td>
+                <td><a class="btn btn-success" href="/editar/{{result.id}}">Editar</a><a class="btn btn-danger"href="/eliminar/{{result.id}}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

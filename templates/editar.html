@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block title %}
+Acerca
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form action="{{url_for('actualizar')}}" method="post">
+            <h1>Editar Alumno</h1>
+            <input type="hidden" name="id"  value="{{datos.id}}">
+            <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" value="{{datos.nombre}}" name="nombre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Apellido</label>
+                <input type="text" value="{{datos.apellido}}" name="apellido" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-md btn-success">Editar</button>
+            <a class="btn btn-md btn-default" href="{{url_for("acerca")}}">Cancelar</a>
+        </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
